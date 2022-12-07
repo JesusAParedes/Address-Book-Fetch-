@@ -15,12 +15,13 @@ const listUsers = () => {
     const list = document.getElementById('user');
     const img = document.querySelector("img");
     arrayofUsers.map(user => {
+        const text = document.createTextNode(`First Name: ${user.name.first} Last Name: ${user.name.last}`);
         img.src = `${user.picture.thumbnail}`;
-        const text = document.createTextNode(`First Name: ${user.name.first} Last Name: ${user.name.last}` 
-        ,)
         const li = document.createElement('li');
         li.appendChild(text);
-        list.append(li);})
+        list.append(img);
+        list.append(li);
+    })
         
 }
 
