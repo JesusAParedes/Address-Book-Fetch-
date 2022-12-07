@@ -13,15 +13,18 @@ const grabData = () => {
 
 const listUsers = () => {
     const list = document.getElementById('user');
-    const img = document.querySelector("img");
+    const img = new Image();
+
     arrayofUsers.map(user => {
-        const text = document.createTextNode(`First Name: ${user.name.first} Last Name: ${user.name.last}`);
-        img.src = `${user.picture.thumbnail}`;
+        const text = document.createTextNode(`First Name: ${user.name.first} Last Name: ${user.name.last} ${user.picture.thumbnail}`);
+        img.src = user.picture.thumbnail;
+
         const li = document.createElement('li');
         li.appendChild(text);
-        list.append(img);
+        list.append(`${img}`);
         list.append(li);
-    })
+    }
+    )
         
 }
 
