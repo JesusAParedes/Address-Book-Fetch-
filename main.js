@@ -18,7 +18,7 @@ const listUsers = () => {
         const img = new Image(); //create an image
         const button = document.createElement('button'); //create a button
         button.setAttribute('id', user.login.username); //set the button id to the user id
-        console.log(button.id)
+
         const text = document.createTextNode(`First Name: ${user.name.first} Last Name: ${user.name.last}`); //give the first and last name from the address
         button.innerHTML = "More Info About Me!"; //give the button some text
         img.src = user.picture.thumbnail; //show the picture of the person on the page
