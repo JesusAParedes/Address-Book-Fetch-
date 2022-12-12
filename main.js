@@ -38,7 +38,6 @@ const listUsers = () => {
             const smallerLi = document.createElement('li'); //create another list
             smallerLi.appendChild(extraInfo); //add the other info to the smaller list
             li.append(smallerLi); //attach the smaller list directly under the basic info of each person
-            list.append();
         }
             
         })}) 
