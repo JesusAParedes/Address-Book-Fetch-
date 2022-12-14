@@ -29,22 +29,40 @@ const listUsers = () => {
         list.append(button); //attaching the button for more info to the list on the html page
         list.append(li); // attaching the list of basic info to the bigger list on the html page
 
-        button.addEventListener("click", () => {//when the created button is clicked, following function is run to add the extra info
+        button.addEventListener("click", () => {//when the created button is clicked, innerHTML is changed which adds more info on the page
 
-            arrayofUsers.filter(user => {//info is filtered to find the extra information
-            if(button.id === user.login.username) {//if button.id = user.login.username show the info
-                const extraInfo = document.createTextNode(`DOB: ${user.dob.date} Location: ${user.location.street.number} ${user.location.street.name} ${user.location.city}, ${user.location.country} Cell: ${user.cell}`) //create another text of that info
-    
-            const smallerLi = document.createElement('li'); //create another list
-            smallerLi.appendChild(extraInfo); //add the other info to the smaller list
-            li.append(smallerLi); //attach the smaller list directly under the basic info of each person
-        }
-            
-        })}) 
+            li.innerHTML = `First Name: ${user.name.first}
+            Last Name: ${user.name.last}
+            Address: ${user.location.street.number} ${user.location.street.name} ${user.location.city}, ${user.location.country} 
+            Cell: (${user.cell})`
+
+        
+    }) 
     }
     )
     
 }
+
+
+
+
+
+
+
+//another way to show data using filter
+
+//     arrayofUsers.filter(user => {//info is filtered to find the extra information
+        //     if(button.id === user.login.username) {//if button.id = user.login.username show the info
+        //         const extraInfo = document.createTextNode(`DOB: ${user.dob.date} 
+        //         Location: ${user.location.street.number} ${user.location.street.name} ${user.location.city}, ${user.location.country} 
+        //         Cell: ${user.cell}`) //create another text of that info
+    
+        //     const smallerLi = document.createElement('li'); //create another list
+        //     smallerLi.appendChild(extraInfo); //add the other info to the smaller list
+        //     li.append(smallerLi); //attach the smaller list directly under the basic info of each person
+        // }
+            
+        // })
 
 
 
